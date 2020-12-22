@@ -446,3 +446,12 @@ def test_prompt_required_false(runner, args, expect):
     result = runner.invoke(cli, args=args, input="prompt", standalone_mode=False)
     assert result.exception is None
     assert result.return_value == expect
+
+
+def test_get_terminal_size_deprecated():
+    msg = (
+        r"^click\.get_terminal_size\(\) is deprecated and will be removed in "
+        r"Click 8\.1\. Please use shutil\.get_terminal_size\(\) instead\.$"
+    )
+    with pytest.warns(DeprecationWarning, match=msg):
+        click.get_terminal_size()

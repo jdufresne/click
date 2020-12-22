@@ -155,6 +155,8 @@ Unreleased
     iterators by setting ``update_min_steps``. :issue:`676`
 -   Respect ``case_sensitive=False`` when doing shell completion for
     ``Choice`` :issue:`1692`
+-   ``click.get_terminal_size()`` is deprecated and will be removed in 8.1. Use
+    :func:`shutil.get_terminal_size` instead. :issue:`1736`
 
 
 Version 7.1.2
